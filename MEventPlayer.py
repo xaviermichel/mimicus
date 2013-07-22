@@ -13,9 +13,10 @@ class MEventPlayer:
 		self.pymouse = PyMouse()
 
 	def run(self):
-		for event in self.events :
-			print event
-			if isinstance(event, MMouseEvent) :
-				self.pymouse.click(event.x, event.y, event.button)
-				time.sleep(config.TIME_BETWEEN_ACTION)
+		for i in range(config.REPEAT_COUNT):
+			for event in self.events :
+				print event
+				if isinstance(event, MMouseEvent) :
+					self.pymouse.click(event.x, event.y, event.button)
+					time.sleep(config.TIME_BETWEEN_ACTION)
 
