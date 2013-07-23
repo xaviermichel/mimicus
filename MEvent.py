@@ -8,6 +8,6 @@ class MEvent:
 	@abc.abstractmethod
 	def playEvent(self) :
 		""" replay the event """
-		print 'Not implemented yet !'
+		raise NotImplementedError('Not implemented yet !')
 		return
 
