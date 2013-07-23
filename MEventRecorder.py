@@ -1,7 +1,11 @@
 #-*-encoding:utf-8-*-
 
 from MMouseEvent import *
+from MWaitEvent import *
+
 from pymouse import PyMouseEvent
+
+import config
 
 class MEventRecorder(PyMouseEvent):
 
@@ -17,11 +21,14 @@ class MEventRecorder(PyMouseEvent):
 			event = MMouseEvent(x, y, button)
 			print event
 			self.events.append(event)
+		self.stop_test()
 
+
+	def stop_test(self):
 		# Should I stop ?
-		if not self.stop_trigger is None and self.stop_trigger(button):
+		if not self.stop_trigger is None and self.stop_trigger(self.events[-1]):
 			self.stop()
 
-	def set_stop_trigger(self, f):
-		self.stop_trigger = f
+		# add sleep (after break, very important)
+		self.events.append(MWaitEvent(config.TIME_BETWEEN_ACTION))
 
