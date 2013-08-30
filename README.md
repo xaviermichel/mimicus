@@ -9,7 +9,7 @@ Requirements
 
 Run it !
 --------
-1. Define loop count in `mimicus.py`
+1. Define loop count in `config.py`
 2. run `python main.py`
 3. define the pattern to reproduce (mouse only)
 4. click on the mouse wheel to reproduce the pattern N times
