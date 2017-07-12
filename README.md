@@ -3,7 +3,7 @@ mimicus
 
 Requirements
 ------------
-- https://github.com/SavinaRoja/PyUserInput
+- https://github.com/SavinaRoja/PyUserInput (#b5dba23)
 - Python (tested on python2.6, linux with python-xlib)
 
 
